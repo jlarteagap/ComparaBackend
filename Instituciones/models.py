@@ -4,7 +4,7 @@ from django.db import models
 class InstitucionesFinancieras(models.Model):
 
     name = models.CharField(max_length=50)
-    logo = models.ImageField()
+    logo = models.ImageField(null = True, blank = True)
 
     class Meta:
         verbose_name = ("Instituciones Financiera")
