@@ -37,10 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+# Apps creadas
     'Instituciones',
     'Creditos',
 
-    'rest_framework'
+# Apps intaladas
+    'rest_framework',
+    'corsheaders'
+
 ]
 
 MIDDLEWARE = [
@@ -51,7 +55,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # add CORS headers
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
+
+# CORS HEADERS config 
+CORS_ORIGIN_WHITELIST = (
+  'localhost:3000',
+  '127.0.0.1:3000'
+)
+
 
 ROOT_URLCONF = 'Compara.urls'
 
