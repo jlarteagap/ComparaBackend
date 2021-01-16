@@ -57,15 +57,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # add CORS headers
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware'
+    'django.middleware.common.CommonMiddleware',
 ]
 
 # CORS HEADERS config 
-CORS_ORIGIN_WHITELIST = (
-  'localhost:3000',
-  '127.0.0.1:3000'
-)
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
 
+CORS_ORIGIN_ALLOW = True
+ALLOWED_HOSTS = ['*']
 
 ROOT_URLCONF = 'Compara.urls'
 
